@@ -83,7 +83,6 @@
         color: orange;
     }
 }
-
 @media (max-width: 1200px) {
     .contact-left {
         width: 450px;

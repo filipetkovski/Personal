@@ -43,7 +43,6 @@
 }
 
 .info p {
-    color: #afafaf;
     font-size: 0.8em;
 }
 
@@ -54,6 +53,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 20px;
+}
+
+.number {
+    text-decoration: none;
 }
 
 .about span {
