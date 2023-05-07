@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial.scale=1.0">
+    <title>Filip Petkovski</title>
+
+    <link rel="stylesheet" href="Css/about-me.css">
+    <link rel="stylesheet" href="Css/contact-me.css">
+    <link rel="stylesheet" href="Css/general.css">
+    <link rel="stylesheet" href="Css/home.css">
+    <link rel="stylesheet" href="Css/header.css">
+    <link rel="stylesheet" href="Css/portfolio.css">
+    <link rel="stylesheet" href="Css/cv.css">
+    <link rel="stylesheet" href="Css/more-info.css">
+    <link rel="stylesheet" href="Css/footer.css">
+
+    <script src="JavaScript/javascript.js"></script>
+</head>
+<body>
+    <header>
+    <div></div>
+    <ul class="nav-menu">
+        <li><a href="#home">HOME</a></li>
+        <li><a href="#about-me">ABOUT ME</a></li>
+        <li><a href="#portfolio">PORTFOLIO</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li class="contact-me__button"><a href="#contact-me">CONTACT ME</a></li>
+    </ul>
+    <button class="menu-button" onclick="hamburgerClick()">
+        <img class="menu-bar" draggable="false" src="Images/menu-bar.png" alt="menu-bar"/>
+    </button>
+    <div class="menu-list">
+        <ul class="nav-menu">
+            <li><a onclick="closeHamburger()" href="#home">HOME</a></li>
+            <li><a onclick="closeHamburger()" href="#about-me">ABOUT ME</a></li>
+            <li><a onclick="closeHamburger()" href="#portfolio">PORTFOLIO</a></li>
+            <li><a onclick="closeHamburger()" href="#cv">CV</a></li>
+            <li onclick="closeHamburger()" class="contact-me__button"><a href="#contact-me">CONTACT ME</a></li>
+            <li class="back-button" onclick="closeHamburger()">Back</li>
+        </ul>
+    </div>
+</header>
+
+    <section id="home">
+        <h1>Hello,</h1>
+        <h1>I'm Filip Petkovski</h1>
+        <h1>Full-Stack Developer</h1>
+        <div class="scroll">
+            <a class="scr" href="#about-me">Scroll</a>
+            <div class="social-media">
+                <a class="social-media-icons" href="https://twitter.com"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg></a>
+                <a class="social-media-icons" href="https://www.instagram.com"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg></a>
+                <a class="social-media-icons" href="https://www.linkedin.com/in/filip-petkovski-676182242/"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg></a>
+            </div>
+        </div>
+    </section>
+
+    <div class="below"></div>
+
+    <section id="about-me">
+        <div class="image">
+
+        </div>
+
+        <div class="info">
+            <h1>Filip Petkovski</h1>
+            <h3>A <span>Full-Stack Developer</span> based in <span>Macedonia</span></h3>
+            <p>A talented and excellent 20-year-old student of FINK with desire and motivation ready to solve all assigned problems and projects on time.</p>
+            <p><span style="color: white; font-weight: bold;">Strengths x Skills:</span> Html, Css, JavaScript, Java, C, C++, Python</p>
+            <p><span style="color: white; font-weight: bold;">What are the benefits from me:</span> 100% effort and high quality work, fully focus, fast service, design details, no regrets...
+            </p>
+            <p>Thank you for your time.</p>
+            <div class="about">
+                <div>Birthday <span>| 16.09.2002</span></div>
+                <div>Phone <span>| 078/907-908</span></div>
+                <div>Residence <span>| Macedonia</span></div>
+                <div>Age <span>| 20 Yr</span></div>
+                <div>Freelance <span>| Available</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio">
+        <div id="portfolio">
+            <div class="portfolio-header">Portfolio</div>
+            <p>I do my work with love!</p>
+
+            <div class="java-scrolling">
+                <div class="java-buttons">
+                    <button onclick="openAll()" class="java-scrolling__all">All</button>
+                    <button onclick="openProject()" class="java-scrolling__projects">Simple</button>
+                    <button onclick="openSocial()" class="java-scrolling__social">Intermediate</button>
+                    <button onclick="openProduct()" class="java-scrolling__product">Capstone</button>
+                </div>
+
+                <div class="container-all">
+                    <div class="container">
+                        <h3><a href="https://filipetkovski.github.io/GoKickss">Sneaker Shop</a></h3>
+                        <p>E-Commerce Template</p>
+                        <div class="con__img">
+                            <a href="https://filipetkovski.github.io/GoKickss"><img height="100%" width="100%" src="Images/ecommerce-template.png" alt="img"/></a>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <h3><a href="https://filipetkovski.github.io/TicTacToe/">Tic Tac Toe</a></h3>
+                        <p>Mini Game</p>
+                        <div class="con__img">
+                            <a href="https://filipetkovski.github.io/TicTacToe/"><img height="100%" width="100%" src="Images/tictactoe.png" alt="img"/></a>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <h3><a href="https://filipetkovski.github.io/EmailTemplate2/">Personal Email Template</a></h3>
+                        <p>Email Template</p>
+                        <div class="con__img">
+                            <a href="https://filipetkovski.github.io/EmailTemplate2/"><img height="100%" width="100%" src="Images/email-template-2.png" alt="img"/></a>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <h3><a href="https://filipetkovski.github.io/KingsGame/">Kings Game</a></h3>
+                        <p>Mini Game</p>
+                        <div class="con__img">
+                            <a href="https://filipetkovski.github.io/KingsGame/"><img height="100%" width="100%" src="Images/mini-game.png" alt="img"/></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-projects">
+                    <div class="container">
+                        <h3><a href="https://filipetkovski.github.io/EmailTemplate2/">Personal Email Template</a></h3>
+                        <p>Email Template</p>
+                        <div class="con__img">
+                            <a href="https://filipetkovski.github.io/EmailTemplate2/"><img height="100%" width="100%" src="Images/email-template-2.png" alt="img"/></a>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <h3><a href="https://filipetkovski.github.io/KingsGame/">Kings Game</a></h3>
+                        <p>Mini Game</p>
+                        <div class="con__img">
+                            <a href="https://filipetkovski.github.io/KingsGame/"><img height="100%" width="100%" src="Images/mini-game.png" alt="img"/></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-media">
+                    <div class="container">
+                        <h3><a href="https://filipetkovski.github.io/TicTacToe/">Tic Tac Toe</a></h3>
+                        <p>Mini Game</p>
+                        <div class="con__img">
+                            <a href="https://filipetkovski.github.io/TicTacToe/"><img height="100%" width="100%" src="Images/tictactoe.png" alt="img"/></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-product">
+                    <div class="container">
+                        <h3><a href="https://filipetkovski.github.io/GoKickss">Sneaker Shop</a></h3>
+                        <p>E-Commerce Template</p>
+                        <div class="con__img">
+                            <a href="https://filipetkovski.github.io/GoKickss"><img height="100%" width="100%" src="Images/ecommerce-template.png" alt="img"/></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cv">
+        <div>
+            <div class="section">
+                <div class="section-heading">Education</div>
+                <div class="education">
+                    <div class="cv-content">
+                        <p class="cv-year">2021-Present</p>
+                        <h3 class="cv-name">Faculty of Computer Science and Engineering</h3>
+                        <p class="cv-sub">Software Engineering</p>
+                    </div>
+
+                    <div class="cv-content">
+                        <p class="cv-year">2017-2021</p>
+                        <h3 class="cv-name">Orce Nikolov High School</h3>
+                        <p class="cv-sub">Graduate with focus on Math and CS</p>
+                    </div>
+
+
+                    <div class="cv-content">
+                        <p class="cv-year">2008-2017</p>
+                        <h3 class="cv-name">Center for foreign languages Beverly</h3>
+                        <p class="cv-sub">English C1 Level</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-heading">Skills</div>
+                <div class="skills">
+                    <div class="ski">
+                        <h3>HTML5</h3>
+                        <h3>CSS3</h3>
+                        <h3>Java Script</h3>
+                        <h3>Java</h3>
+                        <h3>C / C++</h3>
+                        <h3>Python</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-heading">Sertificates</div>
+                <div class="experience">
+                    <div class="cv-content">
+                        <p class="cv-year">26-30.03.2018</p>
+                        <h3 class="cv-name">Certificate for participating at “A Week of Programming”</h3>
+                        <p class="cv-sub">Semos Education</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-me">
+        <div id="co1" class="contact-left">
+            <p>Contact Me</p>
+            <h3>Let's work together!</h3>
+            <a href="mailto:filip.petkovski.work@gmail.com">filip.petkovski.work@gmail.com</a>
+        </div>
+        <div id="co11" class="contact-right">
+            <h3>Get in touch</h3>
+            <p>Always available for freelancing if the right project comes along. Feel free to contact me.</p>
+        </div>
+
+        <div> </div>
+
+        <div id="co2" class="contact-right">
+            <h3>Get in touch</h3>
+            <p>Always available for freelancing if the right project comes along. Feel free to contact me.</p>
+        </div>
+        <div id="co22" class="contact-left">
+            <p>Contact Me</p>
+            <h3>Let's work together!</h3>
+            <a href="mailto:filip.petkovski.work@gmail.com">filip.petkovski.work@gmail.com</a>
+        </div>
+    </section>
+
+    <section id="footer">
+        <div id="social-page" class="social-media">
+            <a class="social-media-icons" href="https://twitter.com"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg></a>
+            <a class="social-media-icons"href="https://www.instagram.com"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg></a>
+            <a class="social-media-icons" href="https://www.linkedin.com/in/filip-petkovski-676182242/"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg></a>
+        </div>
+
+        <div class="copyright">&copy; 2022 copyright all rights reserved</div>
+    </section>
+</body>
+</html>
