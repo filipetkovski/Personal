@@ -1,254 +1,311 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, initial.scale=1.0">
-    <title>Filip Petkovski</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Filip Petkovski | Qt Developer</title>
 
-    <link rel="stylesheet" href="Css/about-me.css">
-    <link rel="stylesheet" href="Css/contact-me.css">
-    <link rel="stylesheet" href="Css/general.css">
-    <link rel="stylesheet" href="Css/home.css">
-    <link rel="stylesheet" href="Css/header.css">
-    <link rel="stylesheet" href="Css/portfolio.css">
-    <link rel="stylesheet" href="Css/cv.css">
-    <link rel="stylesheet" href="Css/more-info.css">
-    <link rel="stylesheet" href="Css/footer.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 
-    <script src="JavaScript/javascript.js"></script>
+  <style>
+    :root{
+      --bg: #0f1720;
+      --card:#151826;
+      --muted:#98a0b3;
+      --accent:#00bfa5;
+      --glass: rgba(255,255,255,0.03);
+      --radius:12px;
+      --header-h:72px;
+      --max-width:1100px;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      background: linear-gradient(180deg,#0b0f15 0%, #0f1720 100%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+    }
+
+    header{
+      position:fixed;
+      inset:0 0 auto 0;
+      height:var(--header-h);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      width:100%;
+      padding:0 2rem;
+      background:linear-gradient(180deg, rgba(10,12,16,0.85), rgba(10,12,16,0.6));
+      backdrop-filter: blur(6px);
+      z-index:1000;
+      border-bottom:1px solid rgba(255,255,255,0.03);
+    }
+
+    .site-brand{display:flex;align-items:center;gap:.75rem}
+    .brand-name{font-weight:700;color:var(--accent);letter-spacing:.2px}
+    nav{display:flex;gap:1.25rem;align-items:center}
+    nav a{
+      color:var(--muted);
+      text-decoration:none;
+      font-weight:600;
+      font-size:.95rem;
+      padding:.5rem;
+      border-radius:8px;
+    }
+    nav a:hover{color:var(--accent);background:var(--glass)}
+
+    .menu-toggle{display:none;background:transparent;border:0;color:var(--muted);cursor:pointer}
+    .menu-toggle svg{width:22px;height:22px}
+
+    main{max-width:var(--max-width);margin:0 auto;padding:calc(var(--header-h) + 2rem) 1.25rem 4rem}
+
+    section{padding:3.5rem 0;border-radius:10px}
+
+    #home{
+      display:flex;
+      gap:2rem;
+      align-items:center;
+      justify-content:space-between;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      padding:3.5rem;
+      border-radius:16px;
+    }
+    .intro{flex:1 1 420px}
+    .intro h1{font-size:2.25rem;margin-bottom:.5rem}
+    .intro h2{font-size:1.5rem;color:var(--accent);margin-bottom:.5rem}
+    .intro p{color:var(--muted);max-width:58ch;margin-top:.5rem}
+
+    .hero-right{width:220px;height:220px;border-radius:14px;background:linear-gradient(135deg,#081018 0%, #0f1b24 100%);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(2,6,12,.6);border:1px solid rgba(255,255,255,0.02)}
+    .avatar{
+      width:92%;height:92%;border-radius:10px;background:
+      linear-gradient(180deg, rgba(0,191,165,0.06), transparent);
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--muted)
+    }
+
+    .socials{margin-top:1.25rem;display:flex;gap:1rem}
+    .socials a{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .6rem;border-radius:10px;background:transparent;color:var(--muted);text-decoration:none;border:1px solid rgba(255,255,255,0.02)}
+    .socials a:hover{color:var(--accent);border-color:rgba(0,191,165,0.12)}
+
+    #about-me{display:flex;flex-wrap:wrap;gap:1.5rem;align-items:flex-start}
+    .about-card{flex:1 1 380px;background:var(--card);padding:1.25rem;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.03)}
+    .about-card h3{color:var(--accent);margin-bottom:.25rem}
+    .about-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem;margin-top:.85rem}
+    .chip{background:rgba(255,255,255,0.02);padding:.6rem;border-radius:10px;color:var(--muted);font-weight:600}
+
+    #portfolio .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+    .project {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.03); /* changed to subtle gray */
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    .project a {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .project-desc {
+      color: var(--muted);
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+    .project img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    #cv .cv-list{display:grid;gap:.75rem}
+    .cv-item{background:var(--card);padding:.9rem;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+    .skills-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
+    .skill-pill{background:rgba(255,255,255,0.02);padding:.45rem .6rem;border-radius:999px;color:var(--muted);font-weight:600}
+
+    #contact-me{display:flex;flex-direction:column;align-items:center;gap:.6rem;text-align:center;padding:2.25rem, transparent;border-radius:12px}
+    .contact-email{color:var(--accent);font-weight:700;text-decoration:none}
+
+    footer{text-align:center;color:var(--muted);font-size:.95rem}
+
+    :target::before{
+      content:"";display:block;height:calc(var(--header-h) + 12px);margin:-calc(var(--header-h) + 12px) 0 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width:900px){
+      .hero-right{display:none}
+      nav{display:none}
+      .menu-toggle{display:inline-flex}
+    }
+
+    @media (max-width:520px){
+      .intro h1{font-size:1.5rem}
+      main{padding:calc(var(--header-h) + 1rem) 1rem 3rem}
+    }
+  </style>
 </head>
 <body>
-    <header>
-    <div></div>
-    <ul class="nav-menu">
-        <li><a href="#home">HOME</a></li>
-        <li><a href="#about-me">ABOUT ME</a></li>
-        <li><a href="#portfolio">PORTFOLIO</a></li>
-        <li><a href="#cv">CV</a></li>
-        <li class="contact-me__button"><a href="#contact-me">CONTACT ME</a></li>
-    </ul>
-    <button class="menu-button" onclick="hamburgerClick()">
-        <img class="menu-bar" draggable="false" src="Images/menu-bar.png" alt="menu-bar"/>
-    </button>
-    <div class="menu-list">
-        <ul class="nav-menu">
-            <li><a onclick="closeHamburger()" href="#home">HOME</a></li>
-            <li><a onclick="closeHamburger()" href="#about-me">ABOUT ME</a></li>
-            <li><a onclick="closeHamburger()" href="#portfolio">PORTFOLIO</a></li>
-            <li><a onclick="closeHamburger()" href="#cv">CV</a></li>
-            <li onclick="closeHamburger()" class="contact-me__button"><a href="#contact-me">CONTACT ME</a></li>
-            <li class="back-button" onclick="closeHamburger()">Back</li>
-        </ul>
+  <header role="banner">
+    <div class="site-brand">
+      <div style="width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#00ffc2);display:flex;align-items:center;justify-content:center;font-weight:800;color:#021014">FP</div>
+      <div class="brand-name">Filip Petkovski</div>
     </div>
-</header>
 
-    <section id="home">
-        <h1>Hello,</h1>
-        <h1>I'm Filip Petkovski</h1>
-        <h1>Qt Developer</h1>
-        <div class="scroll">
-            <a class="scr" href="#about-me">Scroll</a>
-            <div class="social-media">
-                <a class="social-media-icons" href="https://github.com/filipetkovski"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="1em" height="1em" viewBox="0 0 50 50" stroke="currentColor" fill="currentColor"><path d="M17.791,46.836C18.502,46.53,19,45.823,19,45v-5.4c0-0.197,0.016-0.402,0.041-0.61C19.027,38.994,19.014,38.997,19,39 c0,0-3,0-3.6,0c-1.5,0-2.8-0.6-3.4-1.8c-0.7-1.3-1-3.5-2.8-4.7C8.9,32.3,9.1,32,9.7,32c0.6,0.1,1.9,0.9,2.7,2c0.9,1.1,1.8,2,3.4,2 c2.487,0,3.82-0.125,4.622-0.555C21.356,34.056,22.649,33,24,33v-0.025c-5.668-0.182-9.289-2.066-10.975-4.975 c-3.665,0.042-6.856,0.405-8.677,0.707c-0.058-0.327-0.108-0.656-0.151-0.987c1.797-0.296,4.843-0.647,8.345-0.714 c-0.112-0.276-0.209-0.559-0.291-0.849c-3.511-0.178-6.541-0.039-8.187,0.097c-0.02-0.332-0.047-0.663-0.051-0.999 c1.649-0.135,4.597-0.27,8.018-0.111c-0.079-0.5-0.13-1.011-0.13-1.543c0-1.7,0.6-3.5,1.7-5c-0.5-1.7-1.2-5.3,0.2-6.6 c2.7,0,4.6,1.3,5.5,2.1C21,13.4,22.9,13,25,13s4,0.4,5.6,1.1c0.9-0.8,2.8-2.1,5.5-2.1c1.5,1.4,0.7,5,0.2,6.6c1.1,1.5,1.7,3.2,1.6,5 c0,0.484-0.045,0.951-0.11,1.409c3.499-0.172,6.527-0.034,8.204,0.102c-0.002,0.337-0.033,0.666-0.051,0.999 c-1.671-0.138-4.775-0.28-8.359-0.089c-0.089,0.336-0.197,0.663-0.325,0.98c3.546,0.046,6.665,0.389,8.548,0.689 c-0.043,0.332-0.093,0.661-0.151,0.987c-1.912-0.306-5.171-0.664-8.879-0.682C35.112,30.873,31.557,32.75,26,32.969V33 c2.6,0,5,3.9,5,6.6V45c0,0.823,0.498,1.53,1.209,1.836C41.37,43.804,48,35.164,48,25C48,12.318,37.683,2,25,2S2,12.318,2,25 C2,35.164,8.63,43.804,17.791,46.836z"></path></svg></a>
-                <a class="social-media-icons" href="https://www.linkedin.com/in/filip-petkovski-676182242/"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg></a>
-                <a class="social-media-icons" href="https://www.instagram.com"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg></a>
+    <nav role="navigation" aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#about-me">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#cv">CV</a>
+      <a href="#contact-me">Contact</a>
+    </nav>
+
+    <button class="menu-toggle" aria-label="Open menu" title="Open menu" onclick="alert('Mobile menu: use navigation links — you can wire a mobile drawer here')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor"/>
+      </svg>
+    </button>
+  </header>
+
+  <main>
+    <section id="home" aria-labelledby="home-heading">
+      <div class="intro">
+        <h1 id="home-heading">Hello — I'm Filip</h1>
+        <h2>Qt / Cross-Platform Developer</h2>
+        <p>I build cross-platform desktop and embedded applications with C++ and the Qt framework. I specialize in performant UI, clean architecture, and reliable native integrations.</p>
+
+        <div class="socials" aria-hidden="false">
+          <a href="https://github.com/filipetkovski" target="_blank" rel="noopener noreferrer" aria-label="GitHub">GitHub
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" style="margin-left:6px"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.33C4 14.91 3.48 13.7 3.48 13.7c-.36-.92-.88-1.17-.88-1.17-.72-.49.05-.48.05-.48.8.06 1.22.82 1.22.82.71 1.21 1.87.86 2.33.66.07-.52.28-.86.5-1.06-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 8 4.8c.85.004 1.71.115 2.51.34 1.9-1.29 2.74-1.02 2.74-1.02.56 1.38.21 2.4.11 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.29.25.54.73.54 1.48v2.2c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          </a>
+
+          <a href="https://www.linkedin.com/in/filip-petkovski-676182242/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn
+            <svg width="14" height="14" viewBox="0 0 24 24" style="margin-left:6px"><path fill="currentColor" d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v14H0zM7.5 8H12v2.2h.07c.62-1.17 2.14-2.4 4.4-2.4 4.7 0 5.57 3.1 5.57 7.12V22H17v-6.7c0-1.6 0-3.66-2.22-3.66-2.22 0-2.56 1.73-2.56 3.56V22H7.5z"/></svg>
+          </a>
+
+          <a href="mailto:filip.petkovski.work@gmail.com" class="contact-email" aria-label="Email Filip">Email</a>
+        </div>
+      </div>
+
+      <div class="hero-right" aria-hidden="true">
+        <div class="avatar">FP</div>
+      </div>
+    </section>
+
+    <section id="about-me" aria-labelledby="about-heading">
+    <h3 id="about-heading" style="color:var(--accent);margin-bottom:.25rem; font-size:2rem;">About</h3>
+    <div style="display:grid;grid-template-columns:1fr 340px;gap:1.5rem;align-items:start">
+        <div class="about-card" style="padding:1.5rem;">
+        <h3 style="font-size:1.5rem;">Filip Petkovski</h3>
+        <p style="color:var(--muted);margin-top:.75rem; font-size:1.05rem;">
+            Passionate Qt developer focused on cross-platform apps, UI performance, and native integrations. Experienced with C++, QML, Spring Boot and PostgreSQL.
+        </p>
+
+        <div class="about-grid" style="margin-top:1.25rem; gap:.8rem;">
+            <div class="chip" style="padding:.75rem;">Birthday: 16.09.2002</div>
+            <div class="chip" style="padding:.75rem;">Residence: Macedonia</div>
+            <div class="chip" style="padding:.75rem;">Freelance: Available</div>
+            <div class="chip" style="padding:.75rem;">Work: QtWinSoft</div>
+        </div>
+        </div>
+
+        <aside class="about-card" aria-label="Skills" style="padding:1.5rem;">
+        <h4 style="color:var(--muted);margin-bottom:.65rem; font-size:1.1rem;">Strengths & Skills</h4>
+        <div class="skills-row" style="margin-top:.4rem; gap:.6rem;">
+            <div class="skill-pill" style="padding:.55rem .75rem;">Qt</div>
+            <div class="skill-pill" style="padding:.55rem .75rem;">C++ / C</div>
+            <div class="skill-pill" style="padding:.55rem .75rem;">QML</div>
+            <div class="skill-pill" style="padding:.55rem .75rem;">Java</div>
+            <div class="skill-pill" style="padding:.55rem .75rem;">Spring Boot</div>
+            <div class="skill-pill" style="padding:.55rem .75rem;">JavaScript</div>
+            <div class="skill-pill" style="padding:.55rem .75rem;">PostgreSQL</div>
+        </div>
+        </aside>
+    </div>
+    </section>
+
+    <section id="portfolio" aria-labelledby="portfolio-heading">
+      <h3 id="portfolio-heading" style="color:var(--accent); font-size:2rem;">Portfolio</h3>
+      <p style="color:var(--muted); margin-top:.5rem; font-size:1.1rem;">Selected projects — links open in a new tab.</p>
+
+      <div class="grid">
+        <article class="project">
+          <a href="https://filipetkovski.github.io/Eccomerce-Web-App" target="_blank" rel="noopener">Donut Shop</a>
+          <div class="project-desc">Spring + PostgreSQL Web App</div>
+          <img src="Images/Donut.png" alt="Donut Shop screenshot">
+        </article>
+
+        <article class="project">
+          <a href="https://filipetkovski.github.io/Ticket-Manager" target="_blank" rel="noopener">Ticket Manager</a>
+          <div class="project-desc">Spring + PostgreSQL Web App</div>
+          <img src="Images/Donut.png" alt="Ticket manager image">
+        </article>
+
+        <article class="project">
+          <a href="https://filipetkovski.github.io/Ecommerce-Template" target="_blank" rel="noopener">Sneaker Shop</a>
+          <div class="project-desc">Static E-commerce Template</div>
+          <img src="Images/Donut.png" alt="Sneaker shop template">
+        </article>
+
+        <article class="project">
+          <a href="https://filipetkovski.github.io/TicTacToe/" target="_blank" rel="noopener">Tic Tac Toe</a>
+          <div class="project-desc">JavaScript Mini Game</div>
+          <img src="Images/Donut.png" alt="Tic tac toe game">
+        </article>
+      </div>
+    </section>
+
+    <section id="cv" aria-labelledby="cv-heading">
+        <h3 id="cv-heading" style="color:var(--accent); font-size:2rem; margin-bottom:.5rem;">CV & Education</h3>
+
+        <div class="cv-list" style="margin-top:1rem; display:grid; gap:1rem;">
+            <div class="cv-item" style="padding:1.25rem;">
+            <div style="font-weight:700; font-size:1.1rem;">Qt Cross-Platform Developer — QtWinSoft</div>
+            <div style="color:var(--muted); font-size:1rem; margin-top:.5rem;">2024 — Present</div>
+            </div>
+
+            <div class="cv-item" style="padding:1.25rem;">
+            <div style="font-weight:700; font-size:1.1rem;">Software Engineering — Faculty of Computer Science and Engineering</div>
+            <div style="color:var(--muted); font-size:1rem; margin-top:.5rem;">2021 — Present</div>
+            </div>
+
+            <div class="cv-item" style="padding:1.25rem;">
+            <div style="font-weight:700; font-size:1.1rem;">Orce Nikolov High School — Math & CS</div>
+            <div style="color:var(--muted); font-size:1rem; margin-top:.5rem;">2017 — 2021</div>
             </div>
         </div>
     </section>
 
-    <div class="below"></div>
-
-    <section id="about-me">
-        <div class="image">
-
-        </div>
-
-        <div class="info">
-            <h1>Filip Petkovski</h1>
-            <h3><span> Cross-Platform</Cross-Platform></span> Developer based in <span>Macedonia</span></h3>
-            <p>I'm a passionate Qt developer with expertise in building high-performance, cross-platform applications using C++ and the Qt framework. I specialize in developing intuitive user interfaces, optimizing application performance, and integrating complex functionalities across desktop and embedded systems.</p>
-            <p><span style="font-weight: bold;">Strengths x Skills:</span> Qt Framework, C++, C, QML, Java, Spring Boot, JavaScript </p>
-            <div class="about">
-                <div>Birthday <span>| 16.09.2002</span></div>
-                <div>Email <span class="number">| Below<span></div>
-                <div>Residence <span>| Macedonia</span></div>
-                <div>Age <span>| 22 Yr</span></div>
-                <div>Freelance <span>| Available</span></div>
-                <div>Work <span>| QtWinSoft</span></div>
-            </div>
-        </div>
+    <section id="contact-me" aria-labelledby="contact-heading">
+      <h3 id="contact-heading" style="color:var(--accent)">Contact</h3>
+      <p style="color:var(--muted);max-width:60ch">I'm open for freelance and collaboration. Prefer email for initial contact — I usually reply within a few business days.</p>
+      <a class="contact-email" href="mailto:filip.petkovski.work@gmail.com">filip.petkovski.work@gmail.com</a>
     </section>
 
-    <section class="portfolio">
-        <div id="portfolio">
-            <div class="portfolio-header">Portfolio</div>
-            <p>I do my work with love!</p>
-
-            <div class="java-scrolling">
-                <div class="java-buttons">
-                    <button onclick="openAll()" class="java-scrolling__all">All</button>
-                    <button onclick="openProject()" class="java-scrolling__projects">Simple</button>
-                    <button onclick="openSocial()" class="java-scrolling__social">Intermediate</button>
-                    <button onclick="openProduct()" class="java-scrolling__product">Capstone</button>
-                </div>
-
-                <div class="container-all">
-                    <div class="container">
-                        <h3><a href="https://filipetkovski.github.io/Eccomerce-Web-App">Donut Shop</a></h3>
-                        <p>Spring PostgreSQL Web App</p>
-                        <div class="con__img">
-                            <a href="https://github.com/filipetkovski/Eccomerce-Web-App"><img height="100%" width="100%" src="Images/Donut.png" alt="img"/></a>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <h3><a href="https://filipetkovski.github.io/Ticket-Manager">Ticket Manager</a></h3>
-                        <p>Spring PostgreSQL Web App</p>
-                        <div class="con__img">
-                            <a href="https://github.com/filipetkovski/Ticket-Manager"><img height="100%" width="100%" src="https://copycatjm.com/wp-content/uploads/2022/08/Tickets-Prod-Image.jpg" alt="img"/></a>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <h3><a href="https://filipetkovski.github.io/Ecommerce-Template">Sneaker Shop</a></h3>
-                        <p>E-Commerce HTML Template</p>
-                        <div class="con__img">
-                            <a href="https://filipetkovski.github.io/Ecommerce-Template"><img height="100%" width="100%" src="Images/ecommerce-template.png" alt="img"/></a>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <h3><a href="https://filipetkovski.github.io/TicTacToe/">Tic Tac Toe</a></h3>
-                        <p>Java Script Mini Game</p>
-                        <div class="con__img">
-                            <a href="https://filipetkovski.github.io/TicTacToe/"><img height="100%" width="100%" src="Images/tictactoe.png" alt="img"/></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="container-projects">
-                    <div class="container">
-                        <h3><a href="https://filipetkovski.github.io/TicTacToe/">Tic Tac Toe</a></h3>
-                        <p>Java Script Mini Game</p>
-                        <div class="con__img">
-                            <a href="https://filipetkovski.github.io/TicTacToe/"><img height="100%" width="100%" src="Images/tictactoe.png" alt="img"/></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="container-media">
-                    <div class="container">
-                        <h3><a href="https://filipetkovski.github.io/Ecommerce-Template">Sneaker Shop</a></h3>
-                        <p>E-Commerce HTML Template</p>
-                        <div class="con__img">
-                            <a href="https://filipetkovski.github.io/Ecommerce-Template"><img height="100%" width="100%" src="Images/ecommerce-template.png" alt="img"/></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="container-product">
-                    <div class="container">
-                        <h3><a href="https://filipetkovski.github.io/GoKickss">Donut Shop</a></h3>
-                        <p>Spring PostgreSQL Web App</p>
-                        <div class="con__img">
-                            <a href="https://github.com/filipetkovski/Eccomerce-Web-App"><img height="100%" width="100%" src="Images/Donut.png" alt="img"/></a>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <h3><a href="https://filipetkovski.github.io/Ticket-Manager">Ticket Manager</a></h3>
-                        <p>Spring PostgreSQL Web App</p>
-                        <div class="con__img">
-                            <a href="https://github.com/filipetkovski/Ticket-Manager"><img height="100%" width="100%" src="https://copycatjm.com/wp-content/uploads/2022/08/Tickets-Prod-Image.jpg" alt="img"/></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="cv">
-        <div>
-            <div class="section">
-                <div class="section-heading">Education</div>
-                <div class="education">
-                    <div class="cv-content">
-                        <p class="cv-year">2024-Present</p>
-                        <h3 class="cv-name">Qt Cross-Platform Developer</h3>
-                        <p class="cv-sub">QtWinSoft</p>
-                    </div>
-
-                    <div class="cv-content">
-                        <p class="cv-year">2021-Present</p>
-                        <h3 class="cv-name">Faculty of Computer Science and Engineering</h3>
-                        <p class="cv-sub">Software Engineering</p>
-                    </div>
-
-                    <div class="cv-content">
-                        <p class="cv-year">2017-2021</p>
-                        <h3 class="cv-name">Orce Nikolov High School</h3>
-                        <p class="cv-sub">Graduate with focus on Math and CS</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <div class="section-heading">Skills</div>
-                <div class="skills">
-                    <div class="ski">
-                        <h3>Qt Framework</h3>
-                        <h3>C++ / C</h3>
-                        <h3>Spring Boot</h3>
-                        <h3>Java</h3>
-                        <h3>Python</h3>
-                        <h3>Java Script</h3>
-                        <h3>PostgresQSL</h3>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section">
-                <div class="section-heading">Sertificates</div>
-                <div class="experience">
-                    <div class="cv-content">
-                        <p class="cv-year">26-30.03.2018</p>
-                        <h3 class="cv-name">Certificate for participating at “A Week of Programming”</h3>
-                        <p class="cv-sub">Semos Education</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact-me">
-        <div id="co1" class="contact-left">
-            <p>Contact Me</p>
-            <h3>Let's work together!</h3>
-            <a href="mailto:filip.petkovski.work@gmail.com">filip.petkovski.work@gmail.com</a>
-        </div>
-        <div id="co11" class="contact-right">
-            <h3>Get in touch</h3>
-            <p>Always available for freelancing if the right project comes along. Feel free to contact me.</p>
-        </div>
-
-        <div> </div>
-
-        <div id="co2" class="contact-right">
-            <h3>Get in touch</h3>
-            <p>Always available for freelancing if the right project comes along. Feel free to contact me.</p>
-        </div>
-        <div id="co22" class="contact-left">
-            <p>Contact Me</p>
-            <h3>Let's work together!</h3>
-            <a href="mailto:filip.petkovski.work@gmail.com">filip.petkovski.work@gmail.com</a>
-        </div>
-    </section>
-
-    <section id="footer">
-        <div id="social-page" class="social-media">
-            <a class="social-media-icons" href="https://github.com/filipetkovski"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="1em" height="1em" viewBox="0 0 50 50" stroke="currentColor" fill="currentColor"><path d="M17.791,46.836C18.502,46.53,19,45.823,19,45v-5.4c0-0.197,0.016-0.402,0.041-0.61C19.027,38.994,19.014,38.997,19,39 c0,0-3,0-3.6,0c-1.5,0-2.8-0.6-3.4-1.8c-0.7-1.3-1-3.5-2.8-4.7C8.9,32.3,9.1,32,9.7,32c0.6,0.1,1.9,0.9,2.7,2c0.9,1.1,1.8,2,3.4,2 c2.487,0,3.82-0.125,4.622-0.555C21.356,34.056,22.649,33,24,33v-0.025c-5.668-0.182-9.289-2.066-10.975-4.975 c-3.665,0.042-6.856,0.405-8.677,0.707c-0.058-0.327-0.108-0.656-0.151-0.987c1.797-0.296,4.843-0.647,8.345-0.714 c-0.112-0.276-0.209-0.559-0.291-0.849c-3.511-0.178-6.541-0.039-8.187,0.097c-0.02-0.332-0.047-0.663-0.051-0.999 c1.649-0.135,4.597-0.27,8.018-0.111c-0.079-0.5-0.13-1.011-0.13-1.543c0-1.7,0.6-3.5,1.7-5c-0.5-1.7-1.2-5.3,0.2-6.6 c2.7,0,4.6,1.3,5.5,2.1C21,13.4,22.9,13,25,13s4,0.4,5.6,1.1c0.9-0.8,2.8-2.1,5.5-2.1c1.5,1.4,0.7,5,0.2,6.6c1.1,1.5,1.7,3.2,1.6,5 c0,0.484-0.045,0.951-0.11,1.409c3.499-0.172,6.527-0.034,8.204,0.102c-0.002,0.337-0.033,0.666-0.051,0.999 c-1.671-0.138-4.775-0.28-8.359-0.089c-0.089,0.336-0.197,0.663-0.325,0.98c3.546,0.046,6.665,0.389,8.548,0.689 c-0.043,0.332-0.093,0.661-0.151,0.987c-1.912-0.306-5.171-0.664-8.879-0.682C35.112,30.873,31.557,32.75,26,32.969V33 c2.6,0,5,3.9,5,6.6V45c0,0.823,0.498,1.53,1.209,1.836C41.37,43.804,48,35.164,48,25C48,12.318,37.683,2,25,2S2,12.318,2,25 C2,35.164,8.63,43.804,17.791,46.836z"></path></svg></a>
-            <a class="social-media-icons" href="https://www.linkedin.com/in/filip-petkovski-676182242/"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg></a>
-            <a class="social-media-icons" href="https://www.instagram.com"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"></path></svg></a>
-        </div>
-
-        <div class="copyright">&copy; 2022 copyright all rights reserved</div>
-    </section>
+    <footer>
+      <div>© <span id="year"></span> Filip Petkovski — All rights reserved</div>
+    </footer>
+  </main>
+  
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
