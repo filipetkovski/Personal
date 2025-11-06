@@ -21,10 +21,17 @@
       font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
 
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
+    *{
+      box-sizing:border-box;
+      margin:0;padding:0
+    }
+
+    html,body{
+      height:100%
+    }
+
     body{
-      background: linear-gradient(180deg,#0b0f15 0%, #0f1720 100%);
+      background: linear-gradient(180deg,#0b0f15 0%, #0b0f15 100%);
       color:#e6eef6;
       -webkit-font-smoothing:antialiased;
       -moz-osx-font-smoothing:grayscale;
@@ -46,9 +53,24 @@
       border-bottom:1px solid rgba(255,255,255,0.03);
     }
 
-    .site-brand{display:flex;align-items:center;gap:.75rem}
-    .brand-name{font-weight:700;color:var(--accent);letter-spacing:.2px}
-    nav{display:flex;gap:1.25rem;align-items:center}
+    .site-brand{
+      display:flex;
+      align-items:center;
+      gap:.75rem
+    }
+
+    .brand-name{
+      font-weight:700;
+      color:var(--accent);
+      letter-spacing:.2px
+    
+    }
+    nav{
+      display:flex;
+      gap:1.25rem;
+      align-items:center
+    }
+
     nav a{
       color:var(--muted);
       text-decoration:none;
@@ -57,14 +79,33 @@
       padding:.5rem;
       border-radius:8px;
     }
-    nav a:hover{color:var(--accent);background:var(--glass)}
+    nav a:hover{
+      color:var(--accent);
+      background:var(--glass)
+    }
 
-    .menu-toggle{display:none;background:transparent;border:0;color:var(--muted);cursor:pointer}
-    .menu-toggle svg{width:22px;height:22px}
+    .menu-toggle{
+      display:none;
+      background:transparent;
+      border:0;color:var(--muted);
+      cursor:pointer
+    }
 
-    main{max-width:var(--max-width);margin:0 auto;padding:calc(var(--header-h) + 2rem) 1.25rem 4rem}
+    .menu-toggle svg{
+      width:22px;
+      height:22px
+    }
 
-    section{padding:3.5rem 0;border-radius:10px}
+    main{
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:calc(var(--header-h) + 2rem) 1.25rem 4rem
+    }
+
+    section{
+      padding:3.5rem 0;
+      border-radius:10px
+    }
 
     #home{
       display:flex;
@@ -75,31 +116,109 @@
       padding:3.5rem;
       border-radius:16px;
     }
-    .intro{flex:1 1 420px}
-    .intro h1{font-size:2.25rem;margin-bottom:.5rem}
-    .intro h2{font-size:1.5rem;color:var(--accent);margin-bottom:.5rem}
-    .intro p{color:var(--muted);max-width:58ch;margin-top:.5rem}
+    .intro{
+      flex:1 1 420px
+    }
 
-    .hero-right{width:220px;height:220px;border-radius:14px;background:linear-gradient(135deg,#081018 0%, #0f1b24 100%);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(2,6,12,.6);border:1px solid rgba(255,255,255,0.02)}
+    .intro h1{
+      font-size:2.25rem;
+      margin-bottom:.5rem
+    }
+
+    .intro h2{
+      font-size:1.5rem;
+      color:var(--accent);
+      margin-bottom:.5rem
+    }
+
+    .intro p{
+      color:var(--muted);
+      max-width:58ch;
+      margin-top:.5rem
+    }
+
+    .hero-right{
+      width:220px;
+      height:220px;
+      border-radius:14px;
+      background:linear-gradient(135deg,#081018 0%, #0f1b24 100%);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow:0 8px 30px rgba(2,6,12,.6);
+      border:1px solid rgba(255,255,255,0.02)
+    }
+
     .avatar{
       width:92%;height:92%;border-radius:10px;background:
       linear-gradient(180deg, rgba(0,191,165,0.06), transparent);
       display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--muted)
     }
 
-    .socials{margin-top:1.25rem;display:flex;gap:1rem}
-    .socials a{display:inline-flex;align-items:center;gap:.5rem;padding:.45rem .6rem;border-radius:10px;background:transparent;color:var(--muted);text-decoration:none;border:1px solid rgba(255,255,255,0.02)}
-    .socials a:hover{color:var(--accent);border-color:rgba(0,191,165,0.12)}
+    .socials{
+      margin-top:1.25rem;
+      display:flex;gap:1rem
+    }
 
-    #about-me{display:flex;flex-wrap:wrap;gap:1.5rem;align-items:flex-start}
-    .about-card{flex:1 1 380px;background:var(--card);padding:1.25rem;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.03)}
-    .about-card h3{color:var(--accent);margin-bottom:.25rem}
-    .about-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem;margin-top:.85rem}
-    .chip{background:rgba(255,255,255,0.02);padding:.6rem;border-radius:10px;color:var(--muted);font-weight:600}
+    .socials a{
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      padding:.45rem .6rem;
+      border-radius:10px;
+      background:transparent;
+      color:var(--muted);
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,0.02)
+    }
 
-    #portfolio .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin-top:1rem}
+    .socials a:hover{
+      color:var(--accent);
+      border-color:rgba(0,191,165,0.12)
+    }
+
+    #about-me{
+      display:flex;
+      flex-wrap:wrap;
+      gap:1.5rem;
+      align-items:flex-start
+    }
+    .about-card{
+      flex:1 1 380px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      padding:1.25rem;
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.03)
+    
+    }
+    .about-card h3{
+      color:var(--accent);
+      margin-bottom:.25rem
+    }
+
+    .about-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:.6rem;margin-top:.85rem
+    }
+
+    .chip{
+      background:rgba(255,255,255,0.02);
+      padding:.6rem;
+      border-radius:10px;
+      color:var(--muted);
+      font-weight:600
+    }
+
+    #portfolio .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:1rem;
+      margin-top:1rem
+    }
+    
     .project {
-      background: rgba(255,255,255,0.05);
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
       border: 1px solid rgba(255,255,255,0.03); /* changed to subtle gray */
       border-radius: 12px;
       padding: 1.5rem;
@@ -112,7 +231,7 @@
     }
     .project a {
       display: block;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: bold;
       margin-bottom: 0.5rem;
       color: var(--accent);
@@ -120,7 +239,7 @@
     }
     .project-desc {
       color: var(--muted);
-      font-size: 1.05rem;
+      font-size: 0.9rem;
       margin-bottom: 1rem;
     }
     .project img {
@@ -128,19 +247,63 @@
       height: auto;
       border-radius: 8px;
     }
+    
+    #cv .cv-list{
+      display:grid;
+      gap: 0.5rem
+    }
+    .cv-item{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      padding:.9rem;
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.02)
+    }
 
-    #cv .cv-list{display:grid;gap:.75rem}
-    .cv-item{background:var(--card);padding:.9rem;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
-    .skills-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
-    .skill-pill{background:rgba(255,255,255,0.02);padding:.45rem .6rem;border-radius:999px;color:var(--muted);font-weight:600}
+    .skills-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.5rem;
+      margin-top:.5rem
+    }
 
-    #contact-me{display:flex;flex-direction:column;align-items:center;gap:.6rem;text-align:center;padding:2.25rem, transparent;border-radius:12px}
-    .contact-email{color:var(--accent);font-weight:700;text-decoration:none}
+    .skill-pill{
+      background:rgba(255,255,255,0.02);
+      padding:.45rem .6rem;
+      border-radius:999px;
+      color:var(--muted);
+      font-weight:600
+    }
 
-    footer{text-align:center;color:var(--muted);font-size:.95rem}
+    #contact-me{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      align-items:center;
+      gap:.6rem;
+      text-align:center;
+      padding:2.25rem, transparent;
+      border-radius:12px
+    }
+    
+    #contact-heading{
+      font-size: 2rem;
+    }
+
+    .contact-email{
+      color:var(--accent);
+      font-weight:700;
+      text-decoration:none
+    }
+
+    footer{
+      text-align:center;
+      color:var(--muted);
+      font-size:.95rem
+    }
 
     :target::before{
-      content:"";display:block;height:calc(var(--header-h) + 12px);margin:-calc(var(--header-h) + 12px) 0 0;
+      content:"";
+      display:block;
+      height:calc(var(--header-h) + 12px);
+      margin:-calc(var(--header-h) + 12px) 0 0;
     }
 
     .grid {
@@ -160,6 +323,7 @@
       .intro h1{font-size:1.5rem}
       main{padding:calc(var(--header-h) + 1rem) 1rem 3rem}
     }
+    
   </style>
 </head>
 <body>
@@ -243,18 +407,18 @@
 
     <section id="portfolio" aria-labelledby="portfolio-heading">
       <h3 id="portfolio-heading" style="color:var(--accent); font-size:2rem;">Portfolio</h3>
-      <p style="color:var(--muted); margin-top:.5rem; font-size:1.1rem;">Selected projects — links open in a new tab.</p>
+      <p style="color:var(--muted); margin-top:.5rem; bottom-top:.2rem; font-size:1.1rem;">Selected projects — links open in a new tab.</p>
 
       <div class="grid">
         <article class="project">
           <a href="https://filipetkovski.github.io/Eccomerce-Web-App" target="_blank" rel="noopener">Donut Shop</a>
-          <div class="project-desc">Spring + PostgreSQL Web App</div>
+          <div class="project-desc">Spring + SQL Web App</div>
           <img src="Images/Donut.png" alt="Donut Shop screenshot">
         </article>
 
         <article class="project">
           <a href="https://filipetkovski.github.io/Ticket-Manager" target="_blank" rel="noopener">Ticket Manager</a>
-          <div class="project-desc">Spring + PostgreSQL Web App</div>
+          <div class="project-desc">Spring + SQL Web App</div>
           <img src="Images/Donut.png" alt="Ticket manager image">
         </article>
 
@@ -272,9 +436,8 @@
       </div>
     </section>
 
-    <section id="cv" aria-labelledby="cv-heading">
-        <h3 id="cv-heading" style="color:var(--accent); font-size:2rem; margin-bottom:.5rem;">CV & Education</h3>
-
+    <section id="cv">
+        <h3 id="cv-heading" style="color:var(--accent); font-size:2rem;">CV</h3>
         <div class="cv-list" style="margin-top:1rem; display:grid; gap:1rem;">
             <div class="cv-item" style="padding:1.25rem;">
             <div style="font-weight:700; font-size:1.1rem;">Qt Cross-Platform Developer — QtWinSoft</div>
@@ -295,7 +458,7 @@
 
     <section id="contact-me" aria-labelledby="contact-heading">
       <h3 id="contact-heading" style="color:var(--accent)">Contact</h3>
-      <p style="color:var(--muted);max-width:60ch">I'm open for freelance and collaboration. Prefer email for initial contact — I usually reply within a few business days.</p>
+      <p style="color:var(--muted);">I'm open for freelance and collaboration.</p>
       <a class="contact-email" href="mailto:filip.petkovski.work@gmail.com">filip.petkovski.work@gmail.com</a>
     </section>
 
